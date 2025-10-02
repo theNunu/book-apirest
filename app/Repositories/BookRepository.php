@@ -18,7 +18,7 @@ class BookRepository
 
     public function create(array $data)
     {
-        return Book::create($data);
+        return Book::create(attributes: $data);
     }
 
     public function update(Book $book, array $data)

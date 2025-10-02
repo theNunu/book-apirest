@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('author');
+            $table->string('title');  // obligatorio
+            $table->string('author');  // obligatorio
             $table->integer('year')->nullable(); //indicar que una columna puede aceptar valores nulos (NULL) en la base de datos. // opcional
             $table->boolean('state')->default(1); // 1 = activo, 0 = eliminado
             $table->timestamps();

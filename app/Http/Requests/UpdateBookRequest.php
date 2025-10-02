@@ -14,9 +14,9 @@ class UpdateBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'sometimes|required|string|max:255',
-            'author' => 'sometimes|required|string|min:50',
-            'year' => 'sometimes|required|integer|min:1000|max:'.date('Y'),
+            'title' => 'sometimes|required',
+            'author' => 'sometimes|required',
+            'year' => 'sometimes|required|integer',
         ];
     }
 

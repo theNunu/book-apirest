@@ -19,9 +19,12 @@ class BookController extends Controller
         return $this->successResponse($books, 'Lista de libros');
     }
 
-    public function store(StoreBookRequest $request)
+    public function store(StoreBookRequest  $request)
     {
-        $book = Book::create($request->all());
+
+        // dd('controlador de guardado');
+        // $book = Book::create($request->all());
+        $book = Book::create($request->validated());
         return $this->createdResponse($book, 'Libro creado correctamente');
     }
 
@@ -52,7 +55,8 @@ class BookController extends Controller
             return $this->alreadyDeletedResponse("No se puede actualizar, el libro con id {$id} ya fue eliminado");
         }
 
-        $book->update($request->all());
+        // $book->update($request->all());
+        $book->update($request->validated());
         return $this->updatedResponse($book, "Libro con id {$id} actualizado correctamente");
     }
 

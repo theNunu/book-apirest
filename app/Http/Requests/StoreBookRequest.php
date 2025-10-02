@@ -14,9 +14,9 @@ class StoreBookRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255',
-            'author' => 'required|string|min:50',
-            'year' => 'required|integer|min:1000|max:'.date('Y'),
+            'title' => 'required|string',
+            'author' => 'required|string',
+            'year' => 'required|integer',
         ];
     }
 
@@ -25,7 +25,7 @@ class StoreBookRequest extends FormRequest
         return [
             'title.required' => 'El título es obligatorio',
             'author.required' => 'El autor es obligatorio',
-            'author.min' => 'El nombre del autor debe tener al menos 50 caracteres',
+            // 'author.min' => 'El nombre del autor debe tener al menos 50 caracteres',
             'year.required' => 'El año es obligatorio',
             'year.integer' => 'El año debe ser un número',
         ];
